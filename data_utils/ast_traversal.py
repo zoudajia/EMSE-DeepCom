@@ -1,4 +1,4 @@
-import json
+import json,sys
 
 
 def SBT_(cur_root_id, node_list):
@@ -29,4 +29,6 @@ def get_sbt_structure(ast_file, out_file):
                 out.write(' '.join(ast_sbt) + '\n')
 
 
-get_sbt_structure("test/test_ast.json", "test.token.ast")
+if __name__ == '__main__':
+    get_sbt_structure(sys.argv[1], sys.argv[2])
+    # get_sbt_structure("test/test_ast.json", "test.token.ast")
